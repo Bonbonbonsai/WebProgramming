@@ -1,0 +1,18 @@
+* {
+    background-color: #FF90BC;
+}
+
+body {
+    display: flex;
+    flex-direction: row;
+}
+
+p, img {
+    font-size: 20px;
+    width: 40%;
+    margin: 0; /* เพื่อลบ margin ที่ถูกกำหนดไว้โดย default */
+}
+
+.Rat img {
+    width: 60%;
+}
