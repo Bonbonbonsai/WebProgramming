@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    margin: 20px;
+}
+
+table, tr, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+
+.table {
+    margin-top: 10px;
+}
+
+.bar-chart {
+    margin-left: 100px;
+}
+
+.bar-chart div {
+    margin: 10px;
+    padding: 10px;
+}
+
+.bar-chart #one {
+    background-color: red;
+    width: 280px;
+}
+
+.bar-chart #two {
+    background-color: green;
+    width: 400px;
+}
+
+.bar-chart #three {
+    background-color: blue;
+    width: 220px;
+}
+
+.bar-chart #four {
+    background-color: pink;
+    width: 360px;
+}
+
+.bar-chart #five {
+    background-color: paleturquoise;
+    width: 330px;
+}
