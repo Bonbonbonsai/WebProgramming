@@ -27,25 +27,25 @@ table, tr, td {
 
 .bar-chart #one {
     background-color: red;
-    width: 280px;
+    width: 225px;
 }
 
 .bar-chart #two {
     background-color: green;
-    width: 400px;
+    width: 450px;
 }
 
 .bar-chart #three {
     background-color: blue;
-    width: 220px;
+    width: 500px;
 }
 
 .bar-chart #four {
     background-color: pink;
-    width: 360px;
+    width: 400px;
 }
 
 .bar-chart #five {
     background-color: paleturquoise;
-    width: 330px;
+    width: 150px;
 }
