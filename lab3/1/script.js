@@ -37,10 +37,6 @@ function validateForm() {
         alert('กรุณากรอกอำเภอ/เขตที่มีตัวอักษรความยาวไม่ต่ำกว่า 2 ตัวอักษร ! ! !');
         return false;
     }
-    else if (dis < 2) {
-        alert('กรุณากรอกอำเภอ/เขตที่มีตัวอักษรความยาวไม่ต่ำกว่า 2 ตัวอักษร ! ! !');
-        return false;
-    }
     else if (province == "0") {
         alert('กรุณาเลือกจังหวัด ! ! !');
         return false;
