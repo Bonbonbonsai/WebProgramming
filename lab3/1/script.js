@@ -9,42 +9,41 @@ function validateForm() {
     let province = document.getElementById('province').value;
     let postal = document.getElementById('postal').value;
 
+    const form = [];
+
     if (id_card.length !== 13) {
-        alert('กรุณากรอกหมายเลขบัตรประชาชนให้ครบ 13 หลัก ! ! !');
-        return false;
+        form.push('กรุณากรอกหมายเลขบัตรประชาชนให้ครบ 13 หลัก ! ! !');
     }
-    else if (tname == "0") {
-        alert('กรุณาเลือกคำนำหน้านาม ! ! !');
-        return false;
+    if (tname == "0") {
+        form.push('กรุณาเลือกคำนำหน้านาม ! ! !');
     }
-    else if (!(fname.length >= 2 && fname.length <= 20)) {
-        alert('กรุณากรอกชื่อที่มีตัวอักษรความยาวระหว่าง 2-20 ตัวอักษร ! ! !');
-        return false;
+    if (!(fname.length >= 2 && fname.length <= 20)) {
+        form.push('กรุณากรอกชื่อที่มีตัวอักษรความยาวระหว่าง 2-20 ตัวอักษร ! ! !');
     }
-    else if (!(lname.length >= 2 && lname.length <= 30)) {
-        alert('กรุณากรอกนามสกุลที่มีตัวอักษรความยาวระหว่าง 2-30 ตัวอักษร ! ! !');
-        return false;
+    if (!(lname.length >= 2 && lname.length <= 30)) {
+        form.push('กรุณากรอกนามสกุลที่มีตัวอักษรความยาวระหว่าง 2-30 ตัวอักษร ! ! !');
     }
-    else if (address < 15) {
-        alert('กรุณากรอกที่อยู่ที่มีตัวอักษรความยาวไม่ต่ำกว่า 15 ตัวอักษร ! ! !');
-        return false;
+    if (address < 15) {
+        form.push('กรุณากรอกที่อยู่ที่มีตัวอักษรความยาวไม่ต่ำกว่า 15 ตัวอักษร ! ! !');
     }
-    else if (subDis < 2) {
-        alert('กรุณากรอกตำบล/แขวงที่มีตัวอักษรความยาวไม่ต่ำกว่า 2 ตัวอักษร ! ! !');
-        return false;
+    if (subDis < 2) {
+        form.push('กรุณากรอกตำบล/แขวงที่มีตัวอักษรความยาวไม่ต่ำกว่า 2 ตัวอักษร ! ! !');
     }
-    else if (dis < 2) {
-        alert('กรุณากรอกอำเภอ/เขตที่มีตัวอักษรความยาวไม่ต่ำกว่า 2 ตัวอักษร ! ! !');
-        return false;
+    if (dis < 2) {
+        form.push('กรุณากรอกอำเภอ/เขตที่มีตัวอักษรความยาวไม่ต่ำกว่า 2 ตัวอักษร ! ! !');
     }
-    else if (province == "0") {
-        alert('กรุณาเลือกจังหวัด ! ! !');
-        return false;
+    if (province == "0") {
+        form.push('กรุณาเลือกจังหวัด ! ! !');
     }
-    else if (postal.length !== 5) {
-        alert('กรุณากรอกรหัสไปรษณีย์ให้ครบ 13 หลัก ! ! !');
+    if (postal.length !== 5) {
+        form.push('กรุณากรอกรหัสไปรษณีย์ให้ครบ 13 หลัก ! ! !');
+    }
+
+    if (form.length == 0) {
+        return true;
+    } else {
+        alert(form.join('\n'));
         return false;
     }
 
-    return true;
 }
