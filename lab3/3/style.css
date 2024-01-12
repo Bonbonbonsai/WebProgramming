@@ -1,4 +1,4 @@
-* , .btn-primary{
+* {
     font-family: 'Noto Sans', sans-serif;
     padding: 20px;
     margin: 20px;
@@ -7,7 +7,7 @@
 .rec1 {
     background-color: palevioletred;
     border-radius: 25px;
-    width: 100px;
+    width: 110px;
     text-align: right;
     animation: rec1moveToRight 1s forwards paused;
 }
@@ -15,7 +15,7 @@
 .rec2 {
     background-color: aquamarine;
     border-radius: 25px;
-    width: 100px;
+    width: 110px;
     text-align: right;
     animation: rec2moveToRight 1s forwards paused;
 }
@@ -23,7 +23,7 @@
 .rec3 {
     background-color: blanchedalmond;
     border-radius: 25px;
-    width: 100px;
+    width: 110px;
     text-align: right;
     animation: rec3moveToRight 1s forwards paused;
 }
@@ -31,7 +31,7 @@
 .rec4 {
     background-color: blueviolet;
     border-radius: 25px;
-    width: 100px;
+    width: 110px;
     text-align: right;
     animation: rec4moveToRight 1s forwards paused;
 }
@@ -39,14 +39,14 @@
 .rec5 {
     background-color: aqua;
     border-radius: 25px;
-    width: 100px;
+    width: 110px;
     text-align: right;
     animation: rec5moveToRight 1s forwards paused;
 }
 
 @keyframes rec1moveToRight {
     from {
-        width: 100px;
+        width: 110px;
     } to {
         width: 200px;
     }
@@ -54,7 +54,7 @@
 
 @keyframes rec2moveToRight {
     from {
-        width: 100px;
+        width: 110px;
     } to {
         width: 500px;
     }
@@ -62,7 +62,7 @@
 
 @keyframes rec3moveToRight {
     from {
-        width: 100px;
+        width: 110px;
     } to {
         width: 300px;
     }
@@ -70,7 +70,7 @@
 
 @keyframes rec4moveToRight {
     from {
-        width: 100px;
+        width: 110px;
     } to {
         width: 400px;
     }
@@ -78,8 +78,14 @@
 
 @keyframes rec5moveToRight {
     from {
-        width: 100px;
+        width: 110px;
     } to {
         width: 350px;
     }
+}
+
+.btn-primary {
+    padding: 20px;
+    margin: 20px;
+    margin-left: 20px;
 }
