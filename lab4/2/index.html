@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="val1">
+        <p id="labelFname">ชื่อ :</p>
+        <input type="text" id="inputVal1" value=""><br>
+    </div>
+    <div id="val2">
+        <p id="labelLname">นามสกุล :</p>
+        <input type="text" id="inputVal2" value=""><br>
+    </div>
+    <div id="country">
+        <label for='Country' id="labelCountry">ประเทศ :</label>
+        <select id="Country" name="Country">
+            <option value="00" selected="selected">เลือกประเทศ</option>
+            <option value="01">ไทย</option>
+            <option value="02">เวียดนาม</option>
+            <option value="03">ลาว</option>
+            <option value="04">มาเลเซีย</option>
+            <option value="05">สิงคโปร์</option>
+            <option value="06">ฟิลิปปินส์</option>
+            <option value="07">พม่า</option>
+            <option value="08">กัมพูชา</option>
+            <option value="09">บรูไน</option>
+            <option value="10">อินโดนิเซีย</option>
+        </select><br>
+    </div>
+    <input type="button" onclick="changeLanguage()" id="labelBtn" value="เปลี่ยนเป็นอังกฤษ"><br>
+</body>
+
+</html>
