@@ -1,0 +1,12 @@
+* body {
+    display: inline-block;
+    margin: 20px;
+}
+
+hr {
+    margin: 20px;
+}
+
+tr {
+    background-color: gainsboro;
+}
