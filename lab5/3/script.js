@@ -22,8 +22,6 @@ function dataDisplay(data) {
         for (const key in data[i].answers) {
             if (key !== 'correct') {
                 const answerId = key + '-' + (i + 1);
-                const labelId = 'l' + (i * 3 + parseInt(key));
-
                 questionText += `<input type="radio" id="${answerId}" name="cq${i + 1}">
                 <label for="${answerId}">${data[i].answers[key]}</label><br>`;
             }
