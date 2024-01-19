@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        * {
+            margin: 10px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .grid-item {
+            text-align: center;
+            background-color: darkblue;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10%;
+            width: 80%;
+        }
+        h2 {
+            margin-left: 20px;
+        }
+        img {
+            border-radius: 10%;
+            width: 80%;
+        }
+        i {
+            color: white;
+        }
+        @media screen and (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-title">
+        <h1>Ado (singer)</h1>
+        <p>
+            Ado (Japanese: アド,[α] born October 24, 2002) is a Japanese singer. In 2020,
+            at the age of 17, she made her debut with the digital single titled "Usseewa",
+            which peaked at number 1 on Billboard Japan Hot 100,[4] Oricon Digital Singles Chart,
+            and the Oricon Streaming Chart.[5] The song reached 100 million plays on Billboard Japan
+            after 17 weeks from charting-in, which was the sixth fastest in history and the youngest for
+            a solo singer.[6][7][8] In 2022, her song, "New Genesis", was used as the theme song for the
+            anime film One Piece Film: Red, and topped Apple Music's Global Top 100 charts.
+        </p>
+    </div>
+
+    <h2>List of singles</h2>
+    <div class="grid-container">
+        <div class="grid-item">
+            <img src="https://i1.sndcdn.com/artworks-zljpxO8zBpfD4IQQ-Xo7mww-t500x500.jpg" alt="show">
+            <br>
+            <br>
+            <i>"Show" (唱)</i>
+        </div>
+        <div class="grid-item">
+            <img src="https://i1.sndcdn.com/artworks-oUh2aAXQe6zv-0-t500x500.jpg" alt="odo">
+            <br>
+            <br>
+            <i>"Odo" (踊)</i>
+        </div>
+        <div class="grid-item">
+            <img src="https://i1.sndcdn.com/artworks-OyZW1Rucp7EZhzuW-T3EVXw-t500x500.jpg" alt="usseewa">
+            <br>
+            <br>
+            <i>"Usseewa" (うっせぇわ)</i>
+        </div>
+        <div class="grid-item">
+            <img src="https://i1.sndcdn.com/artworks-cV1G3SFs37zHuLRx-DJEybg-t500x500.jpg" alt="New Genesis">
+            <br>
+            <br>
+            <i>"New Genesis" (新時代)</i>
+        </div>
+    </div>
+</body>
+
+</html>
