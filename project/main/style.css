@@ -1,5 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
 
+* {
+    background-color: #3378C6;
+}
+
 body {
-    font-size: "Mitr", sans-serif;
+    font-family: "Mitr", sans-serif;
+    color: white;
+    margin: 0;
+}
+
+.nav-bar {
+    display: flex; /* Use flexbox */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: center; /* Center items vertically */
+    padding: 50px; /* Add some padding for better spacing */
+}
+
+.logo {
+    padding-left: 1000px;
+}
+
+.logo > a > img {
+    width: 100px;
+    border: 10px solid white;
+}
+
+.menu-bar {
+    font-size: 50px;
+    padding-right: 1000px;
+}
+
+.menu-bar > span {
+    margin: 20px;
+}
+
+.menu-bar > span > a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-bar > span > a:hover {
+    opacity: 0.5;
 }
