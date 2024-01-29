@@ -9,6 +9,7 @@ body {
     font-weight: 300;
     color: white;
     margin: 0;
+    padding: 0;
 }
 
 .nav-bar {
@@ -59,20 +60,24 @@ body {
     grid-template-columns: repeat(2, 1fr);
     padding: 40px;
     background-color: #334DC6;
+    border-top: 8px solid white;
+    border-bottom: 8px solid white;
 }
 
 .grid-container-1 > .grid-item-1 {
     display: flex;
     justify-content: right;
-    margin: 20px;
+    padding: 20px;
+    padding-right: 100px;
     background-color: #334DC6;
 }
 
 .grid-item-1 > img {
-    width: 350px;
+    width: 500px;
     height: 350px;
-    border-radius: 50%;
+    border-radius: 5%;
     border: 8px solid white;
+    object-fit: cover;
 }
 
 .grid-item-2 {
