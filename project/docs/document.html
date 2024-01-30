@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="../index.html"><img src="../img/Typescript_logo_2020.svg.png" alt="typescript-logo"></a>
+            </div>
+            <div class="menu-bar">
+                <span><a href="#">Docs</a></span>
+                <span><a href="#">menu2</a></span>
+                <span><a href="#">menu3</a></span>
+                <span><a href="#">menu4</a></span>
+                <span><a href="#">menu5</a></span>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="sidebar">
+                <div class="menu" id="menu-1">
+                    <div class="title-menu">Get Started</div>
+                    <div class="sub-menu">
+                        <a href="#">TS for New Programmer</a>
+                        <a href="#">TS for JS Programmer</a>
+                        <a href="#">TS Tooling in 5 minutes</a>
+                    </div>
+                </div>
+                <div class="menu" id="menu-2">
+                    <div class="title-menu">Handbook</div>
+                    <div class="sub-menu">
+                        <a href="#">The TypeScript Handbook</a>
+                        <a href="#">The Basics</a>
+                        <a href="#">Everyday Types</a>
+                        <a href="#">Narrowing</a>
+                        <a href="#">More on Functions</a>
+                        <a href="#">Object Types</a>
+                        <a href="#">Class</a>
+                        <a href="#">Module</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="content" id="ts-for-begin">
+                    <h1>TypeScript for the New Programmer</h1>
+                    <p>
+                        Congratulations on choosing TypeScript as one of your first languages — you're already making good decisions!<br><br>
+                        You've probably already heard that TypeScript is a “flavor” or “variant” of JavaScript. The relationship 
+                        between TypeScript (TS) and JavaScript (JS) is rather unique among modern programming languages, so learning 
+                        more about this relationship will help you understand how TypeScript adds to JavaScript.
+                    </p>
+                    <h2>What is JavaScript? A Brief History</h2>
+                    <p>
+                        JavaScript (also known as ECMAScript) started its life as a simple scripting language for browsers. At the time it was invented, 
+                        it was expected to be used for short snippets of code embedded in a web page — writing more than a few dozen lines of code would 
+                        have been somewhat unusual. Due to this, early web browsers executed such code pretty slowly. Over time, though, JS became more and 
+                        more popular, and web developers started using it to create interactive experiences.
+                    </p>
+                    <p>
+                        Web browser developers responded to this increased JS usage by optimizing their execution engines (dynamic compilation) and extending 
+                        what could be done with it (adding APIs), which in turn made web developers use it even more. On modern websites, your browser is 
+                        frequently running applications that span hundreds of thousands of lines of code. This is the long and gradual growth of “the web”, 
+                        starting as a simple network of static pages, and evolving into a platform for rich applications of all kinds.
+                    </p>
+                    <p>
+                        More than this, JS has become popular enough to be used outside the context of browsers, such as implementing JS servers using node.js. 
+                        The “run anywhere” nature of JS makes it an attractive choice for cross-platform development. There are many developers these days that 
+                        use only JavaScript to program their entire stack!
+                    </p>
+                    <p>
+                        To summarize, we have a language that was designed for quick uses, and then grew to a full-fledged tool to write applications with millions 
+                        of lines. Every language has its own quirks — oddities and surprises, and JavaScript's humble beginning makes it have many of these. Some examples:
+                    </p>
+                    <ul>
+                        <il>
+                            ■ JavaScript's equality operator <b>(==)</b> coerces its operands, leading to unexpected behavior:
+                        </il>
+                        <br>
+                        <il>
+                            ■ JavaScript also allows accessing properties which aren’t present:
+                        </il>
+                    </ul>
+                </div>
+                <div class="content" id="ts-for-js">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
