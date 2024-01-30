@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="../../../index.html"><img src="../../../img/Typescript_logo_2020.svg.png" alt="typescript-logo"></a>
+            </div>
+            <div class="menu-bar">
+                <span><a href="../ts-for-new/document.html">Docs</a></span>
+                <span><a href="#">menu2</a></span>
+                <span><a href="#">menu3</a></span>
+                <span><a href="#">menu4</a></span>
+                <span><a href="#">menu5</a></span>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="sidebar">
+                <div class="menu" id="menu-1">
+                    <div class="title-menu">Get Started</div>
+                    <div class="sub-menu">
+                        <a href="../ts-for-new/document.html">TS for New Programmer</a>
+                        <a href="../ts-for-js/document.html">TS for JS Programmer</a>
+                        <a href="#">TS Tooling in 5 minutes</a>
+                    </div>
+                </div>
+                <div class="menu" id="menu-2">
+                    <div class="title-menu">Handbook</div>
+                    <div class="sub-menu">
+                        <a href="#">The TypeScript Handbook</a>
+                        <a href="#">The Basics</a>
+                        <a href="#">Everyday Types</a>
+                        <a href="#">Narrowing</a>
+                        <a href="#">More on Functions</a>
+                        <a href="#">Object Types</a>
+                        <a href="#">Class</a>
+                        <a href="#">Module</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <h1>TypeScript for JavaScript Programmers</h1>
+                <p>
+                    TypeScript stands in an unusual relationship to JavaScript. TypeScript offers all of JavaScript's features, and an additional 
+                    layer on top of these: TypeScript's type system.
+                </p>
+                <p>
+                    For example, JavaScript provides language primitives like <b>string</b> and <b>number</b>, but it doesn't check that you've consistently 
+                    assigned these. TypeScript does.
+                </p>
+                <p>
+                    This means that your existing working JavaScript code is also TypeScript code. The main benefit of TypeScript is that 
+                    it can highlight unexpected behavior in your code, lowering the chance of bugs.
+                </p>
+                <p>
+                    This tutorial provides a brief overview of TypeScript, focusing on its type system.
+                </p>
+
+                <h2>Types by Inference</h2>
+                <p>
+                    TypeScript knows the JavaScript language and will generate types for you in many cases. For example in creating 
+                    a variable and assigning it to a particular value, TypeScript will use the value as its type.
+                </p>
+                <img src="../../../img/js-1.png" alt="code-1">
+                <p>
+                    By understanding how JavaScript works, TypeScript can build a type-system that accepts JavaScript code but has types. This offers a type-system 
+                    without needing to add extra characters to make types explicit in your code. That's how TypeScript knows 
+                    that <b>>helloWorld</b> is a <b>string</b> in the above example.
+                </p>
+                <p>
+                    You may have written JavaScript in Visual Studio Code, and had editor auto-completion. Visual Studio Code uses TypeScript under 
+                    the hood to make it easier to work with JavaScript.
+                </p>
+
+                <h2>Defining Types</h2>
+                <p>
+                    You can use a wide variety of design patterns in JavaScript. However, some design patterns make it difficult for types to be inferred automatically 
+                    (for example, patterns that use dynamic programming). To cover these cases, TypeScript supports an extension of the JavaScript language, 
+                    which offers places for you to tell TypeScript what the types should be.
+                </p>
+                <p>
+                    For example, to create an object with an inferred type which includes <b>name: string</b> and <b>id: number</b>, you can write:
+                </p>
+                <img src="../../../img/js-2.png" alt="code-2">
+                <p>
+                    You can explicitly describe this object's shape using an <b>interface</b> declaration:
+                </p>
+                <img src="../../../img/js-3.png" alt="code-3">
+                <p>
+                    You can then declare that a JavaScript object conforms to the shape of your new <b>interface</b> by using syntax like<b> : TypeName</b> after a variable declaration:
+                </p>
+                <img src="../../../img/js-4.png" alt="code-4">
+                <p>
+                    If you provide an object that doesn't match the interface you have provided, TypeScript will warn you:
+                </p>
+                <img src="../../../img/js-5.png" alt="code-5">
+                <p>
+                    Since JavaScript supports classes and object-oriented programming, so does TypeScript. You can use an interface declaration with classes:
+                </p>
+                <img src="../../../img/js-6.png" alt="code-6">
+                <p>
+                    You can use interfaces to annotate parameters and return values to functions:
+                </p>
+                <img src="../../../img/js-7.png" alt="code-7code-7">
+                <p>
+                    There is already a small set of primitive types available in JavaScript: <b>boolean</b>, <b>bigint</b>, <b>null</b>, <b>number</b>, <b>string</b>, <b>symbol</b>, 
+                    and <b>undefined</b>, which you can use in an interface. TypeScript extends this list with a few more, such as any (allow anything), unknown 
+                    (ensure someone using this type declares what the type is), never (it's not possible that this type could happen), and <b>void</b> (a function which 
+                    returns <b>undefined</b> or has no return value).
+                </p>
+                <p>
+                    You'll see that there are two syntaxes for building types: Interfaces and Types. You should prefer <b>interface</b>. Use <b>type</b> when you need specific features.
+                </p>
+
+                <h2>Composing Types</h2>
+                <p>
+                    With TypeScript, you can create complex types by combining simple ones. There are two popular ways to do so: with unions, and with generics.
+                </p>
+
+                <h3>Unions</h3>
+                <p>
+                    With a union, you can declare that a type could be one of many types. For example, you can describe a <b>boolean</b> type as being either <b>true</b> or <b>false</b>:
+                </p>
+                <img src="../../../img/js-8.png" alt="code-8">
+                <p>
+                    <i>Note:</i> If you hover over <b>MyBool</b> above, you’ll see that it is classed as <b>boolean</b>. That’s a property of the Structural Type System. More on this below.
+                </p>
+                <p>
+                    A popular use-case for union types is to describe the set of <b>string</b> or <b>number</b> literals that a value is allowed to be:
+                </p>
+                <img src="../../../img/js-9.png" alt="code-9">
+                <p>
+                    Unions provide a way to handle different types too. For example, you may have a function that takes an <b>array</b> or a <b>string</b>:
+                </p>
+                <img src="../../../img/js-10.png" alt="code-10">
+                <p>
+                    To learn the type of a variable, use <b>typeof</b>:
+                </p>
+                <div class="table">
+                    <div id="1"><b>Type</b></div>
+                    <div id="2"><b>Predicate</b></div>
+                    <div id="3">string</div>
+                    <div id="4">typeof s === "string"</div>
+                    <div id="5">number</div>
+                    <div id="6">typeof n === "number"</div>
+                    <div id="7">boolean</div>
+                    <div id="8">typeof b === "boolean"</div>
+                    <div id="9">undefined</div>
+                    <div id="10">typeof undefined === "undefined"</div>
+                    <div id="11">function</div>
+                    <div id="12">typeof f === "function"</div>
+                    <div id="13">array</div>
+                    <div id="14">Array.isArray(a)</div>
+                </div>
+                <p>
+                    For example, you can make a function return different values depending on whether it is passed a string or an array:
+                </p>
+                <img src="../../../img/js-11.png" alt="code-11">
+
+                <h3>Generics</h3>
+                <p>
+                    Generics provide variables to types. A common example is an array. An array without generics could contain anything. 
+                    An array with generics can describe the values that the array contains.
+                </p>
+                <img src="../../../img/js-12.png" alt="code-12">
+                <p>
+                    You can declare your own types that use generics:
+                </p>
+                <img src="../../../img/js-13.png" alt="code-13">
+
+                <h2>Structural Type System</h2>
+                <p>
+                    One of TypeScript's core principles is that type checking focuses on the <i>shape</i> that values have. This is 
+                    sometimes called “duck typing” or “structural typing”.
+                </p>
+                <p>
+                    In a structural type system, if two objects have the same shape, they are considered to be of the same type.
+                </p>
+                <img src="../../../img/js-14.png" alt="code-14">
+                <p>
+                    The <b>point</b> variable is never declared to be a <b>Point</b> type. However, TypeScript compares the shape of 
+                    <b>point</b> to the shape of <b>Point</b> in the type-check. They have the same shape, so the code passes.
+                </p>
+                <p>
+                    The shape-matching only requires a subset of the object’s fields to match.
+                </p>
+                <img src="../../../img/js-15.png" alt="code-15">
+                <p>
+                    There is no difference between how classes and objects conform to shapes:
+                </p>
+                <img src="../../../img/js-16.png" alt="code-16">
+                <p>
+                    If the object or class has all the required properties, TypeScript will say they match, regardless of the implementation details.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
