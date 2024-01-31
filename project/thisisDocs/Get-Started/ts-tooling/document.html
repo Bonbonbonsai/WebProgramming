@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="nav-bar">
+            <div class="logo">
+                <a href="../../../index.html"><img src="../../../img/Typescript_logo_2020.svg.png"
+                        alt="typescript-logo"></a>
+            </div>
+            <div class="menu-bar">
+                <span><a href="../ts-for-new/document.html">Docs</a></span>
+                <span><a href="#">menu2</a></span>
+                <span><a href="#">menu3</a></span>
+                <span><a href="#">menu4</a></span>
+                <span><a href="#">menu5</a></span>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="sidebar">
+                <div class="menu" id="menu-1">
+                    <div class="title-menu">Get Started</div>
+                    <div class="sub-menu">
+                        <a href="../ts-for-new/document.html">TS for New Programmer</a>
+                        <a href="../ts-for-js/document.html">TS for JS Programmer</a>
+                        <a href="document.html">TS Tooling in 5 minutes</a>
+                    </div>
+                </div>
+                <div class="menu" id="menu-2">
+                    <div class="title-menu">Handbook</div>
+                    <div class="sub-menu">
+                        <a href="#">The TypeScript Handbook</a>
+                        <a href="#">The Basics</a>
+                        <a href="#">Everyday Types</a>
+                        <a href="#">Narrowing</a>
+                        <a href="#">More on Functions</a>
+                        <a href="#">Object Types</a>
+                        <a href="#">Class</a>
+                        <a href="#">Module</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <h1>TypeScript Tooling in 5 minutes</h1>
+                <p>
+                    Let's get started by building a simple web application with TypeScript.
+                </p>
+
+                <h2>Installing TypeScript</h2>
+                <p>
+                    There are two main ways to add TypeScript to your project:
+                </p>
+                <ul>
+                    <li>Via npm (the Node.js package manager)</li>
+                    <li>By installing TypeScript's Visual Studio plugins</li>
+                </ul>
+                <p>
+                    Visual Studio 2017 and Visual Studio 2015 Update 3 include TypeScript language support by 
+                    default but does not include the TypeScript compiler, <b>tsc</b>. If you didn't install TypeScript with 
+                    Visual Studio, you can still download it.
+                </p>
+                <p>
+                    For npm users:
+                </p>
+                <img src="../../../img/tool-1.png" alt="code-1">
+
+                <h2>Building your first TypeScript file</h2>
+                <p>
+                    In your editor, type the following JavaScript code in <b>greeter.ts</b>:
+                </p>
+                <img src="" alt="">
+
+                <h2>Compiling your code</h2>
+                <p>
+                    We used a <b>.ts</b> extension, but this code is just JavaScript. You could have copy/pasted 
+                    this straight out of an existing JavaScript app.
+                </p>
+                <p>
+                    At the command line, run the TypeScript compiler:
+                </p>
+                <img src="" alt="">
+                <p>
+                    The result will be a file <b>greeter.js</b> which contains the same JavaScript that you fed in. 
+                    We're up and running using TypeScript in our JavaScript app!
+                </p>
+                <p>
+                    Now we can start taking advantage of some of the new tools TypeScript offers. Add a <b>: string</b> type 
+                    annotation to the ‘person' function argument as shown here:
+                </p>
+                <img src="" alt="">
+
+                <h2>Type annotations</h2>
+                <p>
+                    Type annotations in TypeScript are lightweight ways to record the intended contract of the function or variable. 
+                    In this case, we intend the greeter function to be called with a single string parameter. We can try changing 
+                    the call greeter to pass an array instead:
+                </p>
+                <img src="" alt="">
+                <p>
+                    Re-compiling, you'll now see an error:
+                </p>
+                <img src="" alt="">
+                <p>
+                    Similarly, try removing all the arguments to the greeter call. TypeScript will let you know that you have called this 
+                    function with an unexpected number of parameters. In both cases, TypeScript can offer static analysis based on both the 
+                    structure of your code, and the type annotations you provide.
+                </p>
+                <p>
+                    Notice that although there were errors, the <b>greeter.js</b> file is still created. You can use TypeScript even if there are 
+                    errors in your code. But in this case, TypeScript is warning that your code will likely not run as expected.
+                </p>
+
+                <h2>Interfaces</h2>
+                <p>
+                    Let's develop our sample further. Here we use an interface that describes objects that have a firstName and lastName field. 
+                    In TypeScript, two types are compatible if their internal structure is compatible. This allows us to implement an interface 
+                    just by having the shape the interface requires, without an explicit implements clause.
+                </p>
+                <img src="" alt="">
+
+                <h2>Classes</h2>
+                <p>
+                    Finally, let's extend the example one last time with classes. TypeScript supports new features in JavaScript, 
+                    like support for class-based object-oriented programming.
+                </p>
+                <p>
+                    Here we're going to create a <b>Student</b> class with a constructor and a few public fields. Notice that classes 
+                    and interfaces play well together, letting the programmer decide on the right level of abstraction.
+                </p>
+                <p>
+                    Also of note, the use of <b>public</b> on arguments to the constructor is a shorthand that allows 
+                    us to automatically create properties with that name.
+                </p>
+                <img src="" alt="">
+                <p>
+                    Re-run <b>tsc greeter.ts</b> and you'll see the generated JavaScript is the same as the earlier code. Classes in TypeScript 
+                    are just a shorthand for the same prototype-based OO that is frequently used in JavaScript.
+                </p>
+
+                <h2>Running your TypeScript web app</h2>
+                <p>
+                    Now type the following in <b>greeter.html</b>:
+                </p>
+                <img src="" alt="">
+                <p>
+                    Open <b>greeter.html</b> in the browser to run your first simple TypeScript web application!
+                </p>
+                <p>
+                    Optional: Open <b>greeter.ts</b> in Visual Studio, or copy the code into the TypeScript playground. 
+                    You can hover over identifiers to see their types. Notice that in some cases these types are 
+                    inferred automatically for you. Re-type the last line, and see completion lists and parameter 
+                    help based on the types of the DOM elements. Put your cursor on the reference to the greeter function, 
+                    and hit F12 to go to its definition. Notice, too, that you can right-click on a symbol and 
+                    use refactoring to rename it.
+                </p>
+                <p>
+                    The type information provided works together with the tools to work with JavaScript at application scale. 
+                    For more examples of what's possible in TypeScript, see the Samples section of the website.
+                </p>
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
