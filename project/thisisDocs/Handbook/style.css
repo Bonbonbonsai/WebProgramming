@@ -99,3 +99,11 @@ img {
     height: auto;
     width: 100%;
 }
+
+.main-content a {
+    color: #FF951D;
+}
+
+.main-content a:hover {
+    opacity: 0.5;
+}
