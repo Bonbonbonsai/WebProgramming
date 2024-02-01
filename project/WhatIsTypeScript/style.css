@@ -193,3 +193,27 @@ body {
     padding-top: 20px;
     background-color: #334DC6;
 }
+
+#start-button {
+    display: flex;
+    justify-content: center;
+    margin: 40px;
+}
+
+#start-button button {
+    font-weight: 700;
+    font-size: 50px;
+    padding: 12.5px 30px;
+    width: 1000px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #2ba8fb;
+    color: #ffffff;
+    transition: all 0.5s;
+}
+
+#start-button button:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+}

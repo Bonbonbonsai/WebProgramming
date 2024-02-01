@@ -18,12 +18,14 @@
                         alt="typescript-logo"></a>
             </div>
             <div class="menu-bar">
-                <span><a href="../ts-for-new/document.html">Docs</a></span>
-                <span><a href="#">menu2</a></span>
-                <span><a href="#">menu3</a></span>
-                <span><a href="#">menu4</a></span>
-                <span><a href="#">menu5</a></span>
+                <span><a href="../../../thisisDocs/Get-Started/ts-for-new/document.html">Get Started</a></span>
+                <span><a href="../../../thisisDocs/Handbook/The TS Handbook/Document.html">Handbook</a></span>
+                <span><a href="../../../reference/reference.html">Reference</a></span>
             </div>
+        </div>
+
+        <div class="tooth">
+            <img src="../../../img/toothless-dancing-gif.gif" alt="toothless-dance">
         </div>
 
         <div class="grid-container">
@@ -42,11 +44,6 @@
                         <a href="../The TS Handbook/Document.html">The TypeScript Handbook</a>
                         <a href="../The Basics/Document.html">The Basics</a>
                         <a href="../Everyday/Document.html">Everyday Types</a>
-                        <a href="../Narrow/Document.html">Narrowing</a>
-                        <a href="../More on Function/Document.html">More on Functions</a>
-                        <a href="../Object types/Document.html">Object Types</a>
-                        <a href="../Clazz/Document.html">Class</a>
-                        <a href="../Moodule/Document.html">Module</a>
                     </div>
                 </div>
             </div>
@@ -110,7 +107,7 @@
                             assign it to (or from) a value of any type, or pretty much
                             anything else that’s syntactically legal:
                         </p>
-                        <img src="" alt="">
+                        <img src="../../../img/everyday/e1.png" alt="code-1">
                         <p>
                             The <b>any</b> type is useful when you don’t want to write out a long type just
                             to convince TypeScript that a particular line of code is okay.
@@ -134,13 +131,13 @@
                     When you declare a variable using <b>const</b>, <b>var</b>, or <b>let</b>, you can optionally
                     add a type annotation to explicitly specify the type of the variable:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e2.png" alt="code-2">
                 <p>
                     In most cases, though, this isn’t needed. Wherever possible, TypeScript tries to
                     automatically <i>infer</i> the types in your code. For example, the type of a variable is
                     inferred based on the type of its initializer:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e3.png" alt="code-3">
                 <p>
                     For the most part you don’t need to explicitly learn the rules of inference. If you’re starting out,
                     try using fewer type annotations than you think - you might be surprised
@@ -159,16 +156,16 @@
                     to declare what types of parameters the function accepts. Parameter type annotations
                     go after the parameter name:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e4.png" alt="code-4">
                 <p>
                     When a parameter has a type annotation, arguments to that function will be checked:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e5.png" alt="code-5">
                 <h3>Return Type Annotations</h3>
                 <p>
                     You can also add return type annotations. Return type annotations appear after the parameter list:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e6.png" alt="code-6">
                 <p>
                     Much like variable type annotations, you usually don’t need a return type annotation because
                     TypeScript will infer the function’s <b>return</b> type based on its return statements. The type
@@ -182,7 +179,7 @@
                     If you want to annotate the return type of a function which returns a promise, you should use the
                     <b>Promise</b> type:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e7.png" alt="code-7">
                 <h3>Anonymous Functions</h3>
                 <p>
                     Anonymous functions are a little bit different from function declarations. When a function appears
@@ -193,7 +190,7 @@
                 <p>
                     Here’s an example:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e8.png" alt="code-8">
                 <p>
                     Even though the parameter <b>s</b> didn’t have a type annotation, TypeScript used the types of the
                     <b>forEach</b>
@@ -219,7 +216,7 @@
                 <p>
                     For example, here’s a function that takes a point-like object:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e9.png" alt="code-9">
                 <p>
                     Here, we annotated the parameter with a type with two properties - <b>x</b> and <b>y</b> - which
                     are both of type <b>number</b>. You can use <b>,</b> or <b>;</b> to separate the properties, and the
@@ -234,14 +231,14 @@
                     Object types can also specify that some or all of their properties are <i>optional</i>. To do this,
                     add a <b>?</b> after the property name:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e10.png" alt="code-10">
                 <p>
                     In JavaScript, if you access a property that doesn’t exist, you’ll get the value <b>undefined</b>
                     rather
                     than a runtime error. Because of this, when you read from an optional property, you’ll have to
                     check for <b>undefined</b> before using it.
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e11.png" alt="code-11">
                 <h2>Union Types</h2>
                 <p>
                     TypeScript’s type system allows you to build new types out of existing ones using a
@@ -257,7 +254,7 @@
                 <p>
                     Let’s write a function that can operate on strings or numbers:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e12.png" alt="code-12">
                 <h3>Working with Union Types</h3>
                 <p>
                     It’s easy to <i>provide</i> a value matching a union type - simply provide a type matching any of
@@ -268,11 +265,20 @@
                     For example, if you have the union <b>string</b> | <b>number</b>, you can’t use methods that are
                     only available on <b>string</b>:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e13.png" alt="code-13">
+                <p>
+                    The solution is to narrow the union with code, the same as you would in JavaScript without type 
+                    annotations. Narrowing occurs when TypeScript can deduce a more specific type for a value 
+                    based on the structure of the code.
+                </p>
+                <p>
+                    For example, TypeScript knows that only a <b>string</b> value will have a <b>typeof</b> value <b>"string"</b>:
+                </p>
+                <img src="../../../img/everyday/e14.png" alt="code-14">
                 <p>
                     Another example is to use a function like <b>Array.isArray</b>:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e15.png" alt="code-15">
                 <p>
                     Notice that in the <b>else</b> branch, we don’t need to do anything special - if <b>x</b> wasn’t a
                     <b>string[]</b>,
@@ -285,7 +291,7 @@
                     use that
                     property without narrowing:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e16.png" alt="code-16">
 
                 <h2>Type Aliases</h2>
                 <p>
@@ -296,25 +302,25 @@
                 <p>
                     A <i>type alias</i> is exactly that - a name for any <i>type</i>. The syntax for a type alias is:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e17.png" alt="code-17">
                 <p>
                     You can actually use a type alias to give a name to any type at all, not just an object type.
                     For example, a type alias can name a union type:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e18.png" alt="code-18">
                 <p>
                     Note that aliases are <i>only</i> aliases - you cannot use type aliases to create different/distinct
                     “versions” of the same type. When you use the alias, it’s exactly as if you had written the
                     aliased type. In other words, this code might <i>look</i> illegal, but is OK according to TypeScript
                     because both types are aliases for the same type:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e19.png" alt="code-19">
 
                 <h2>Interfaces</h2>
                 <p>
                     An <b>interface declaration</b> is another way to name an object type:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e20.png" alt="code-20">
                 <p>
                     Just like when we used a type alias above, the example works just as if we had used an anonymous
                     object type. TypeScript is only concerned with the <i>structure</i> of the value we passed to
@@ -334,20 +340,20 @@
                     <div id="1">
                         <h4>Interface</h4>
                         <p>Extending an interface</p>
-                        <img src="" alt="">
+                        <img src="../../../img/everyday/e21.png" alt="code-21">
                     </div>
                     <div id="2">
                         <h4>Type</h4>
                         <p>Extending a type via intersections</p>
-                        <img src="" alt="">
+                        <img src="../../../img/everyday/e22.png" alt="code-22">
                     </div>
                     <div id="3">
                         <p>Adding new fields to an existing interface</p>
-                        <img src="" alt="">
+                        <img src="../../../img/everyday/e23.png" alt="code-23">
                     </div>
                     <div id="4">
                         <p>A type cannot be changed after being created</p>
-                        <img src="" alt="">
+                        <img src="../../../img/everyday/e24.png" alt="code-24">
                     </div>
                 </div>
 
@@ -363,24 +369,24 @@
                 <p>
                     In this situation, you can use a <i>type assertion</i> to specify a more specific type:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e25.png" alt="code-25">
                 <p>
                     Like a type annotation, type assertions are removed by the compiler and won’t affect the runtime behavior of your code.
                 </p>
                 <p>
                     You can also use the angle-bracket syntax (except if the code is in a <b>.tsx</b> file), which is equivalent:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e26.png" alt="code-26">
                 <p>
                     TypeScript only allows type assertions which convert to a <b>more specific</b> or <b>less specific</b> version of a type. 
                     This rule prevents “impossible” coercions like:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e27.png" alt="code-27">
                 <p>
                     Sometimes this rule can be too conservative and will disallow more complex coercions that might be valid. If this happens, 
                     you can use two assertions, first to <b>any</b> (or <b>unknown</b>, which we’ll introduce later), then to the desired type:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e28.png" alt="code-28">
 
                 <h2>Literal Types</h2>
                 <p>
@@ -390,11 +396,11 @@
                     One way to think about this is to consider how JavaScript comes with different ways to declare a variable. Both <b>var</b> and <b>let</b> allow 
                     for changing what is held inside the variable, and <b>const</b> does not. This is reflected in how TypeScript creates types for literals.
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e29.png" alt="code-29">
                 <p>
                     By themselves, literal types aren’t very valuable:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e30.png" alt="code-30">
                 <p>
                     It’s not much use to have a variable that can only have one value!
                 </p>
@@ -402,15 +408,15 @@
                     But by <i>combining</i> literals into unions, you can express a much more useful concept - for example, 
                     functions that only accept a certain set of known values:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e31.png" alt="code-31">
                 <p>
                     Numeric literal types work the same way:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e32.png" alt="code-32">
                 <p>
                     Of course, you can combine these with non-literal types:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e33.png" alt="code-33">
                 <p>
                     There’s one more kind of literal type: boolean literals. There are only two boolean literal types, and as you might guess, 
                     they are the types <b>true</b> and <b>false</b>. The type <b>boolean</b> itself is actually just an alias for the union <b>true | false</b>.
@@ -420,7 +426,7 @@
                     When you initialize a variable with an object, TypeScript assumes that the properties of that object might 
                     change values later. For example, if you wrote code like this:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e34.png" alt="code-34">
                 <p>
                     TypeScript doesn’t assume the assignment of <b>1</b> to a field which previously had <b>0</b> is an error. Another way of saying 
                     this is that <b>obj.counter</b> must have the type <b>number</b>, not <b>0</b>, because types are used to determine both 
@@ -429,7 +435,7 @@
                 <p>
                     The same applies to strings:
                 </p>
-                <img src="" alt="">
+                <img src="../../../img/everyday/e35.png" alt="code-35">
                 <p>
                     In the above example <b>req.method</b> is inferred to be <b>string</b>, not <b>"GET"</b>. Because code can be evaluated between the creation of 
                     <b>req</b> and the call of <b>handleRequest</b> which could assign a new string like <b>"GUESS"</b> to <b>req.method</b>, 
@@ -441,7 +447,7 @@
                 <ol>
                     <li>
                         <p>You can change the inference by adding a type assertion in either location:</p>
-                        <img src="" alt="">
+                        <img src="../../../img/everyday/e36.png" alt="code-36">
                         <p>
                             Change 1 means “I intend for <b>req.method</b> to always have the literal type <b>"GET"</b>”, preventing the possible 
                             assignment of <b>"GUESS"</b> to that field after. Change 2 means “I know for other reasons 
@@ -450,13 +456,72 @@
                     </li>
                     <li>
                         <p>You can use <b>as const</b> to convert the entire object to be type literals:</p>
-                        <img src="" alt="">
-                        <p>
-                            The <b>as const</b> suffix acts like <b>const</b> but for the type system, ensuring that all properties are assigned the 
-                            literal type instead of a more general version like <b>string</b> or <b>number</b>.
-                        </p>
+                        <img src="../../../img/everyday/e37.png" alt="code-37">
                     </li>
+                    <p>
+                        The <b>as const</b> suffix acts like <b>const</b> but for the type system, ensuring that all properties are assigned the 
+                        literal type instead of a more general version like <b>string</b> or <b>number</b>.
+                    </p>
                 </ol>
+
+                <h2>null and undefined</h2>
+                <p>
+                    JavaScript has two primitive values used to signal absent or 
+                    uninitialized value: <b>null</b> and <b>undefined</b>.
+                </p>
+                <p>
+                    TypeScript has two corresponding types by the same names. How these types behave 
+                    depends on whether you have the <b>strictNullChecks</b> option on.
+                </p>
+                <h3>strictNullChecks off</h3>
+                <p>
+                    With <b>strictNullChecks</b> off, values that might be <b>null</b> or <b>undefined</b> can still be accessed normally, and the values null and 
+                    <b>undefined</b> can be assigned to a property of any type. This is similar to how languages without null checks (e.g. C#, Java) behave. 
+                    The lack of checking for these values tends to be a major source of bugs; we always recommend people turn <b>strictNullChecks</b> on 
+                    if it’s practical to do so in their codebase.
+                </p>
+                <h3>strictNullChecks on</h3>
+                <p>
+                    With <b>strictNullChecks</b> on, when a value is <b>null</b> or <b>undefined</b>, you will need to test for those values before using methods or properties on that 
+                    value. Just like checking for <b>undefined</b> before using an optional property, we can use <i>narrowing</i> to check for values that might be <b>null</b>:
+                </p>
+                <img src="../../../img/everyday/e38.png" alt="code-38">
+                <h3>Non-null Assertion Operator (Postfix !)</h3>
+                <p>
+                    TypeScript also has a special syntax for removing <b>null</b> and <b>undefined</b> from a type without doing any explicit checking. Writing <b>!</b> 
+                    after any expression is effectively a type assertion that the value isn’t <b>null</b> or <b>undefined</b>:
+                </p>
+                <img src="../../../img/everyday/e39.png" alt="code-39">
+                <p>
+                    Just like other type assertions, this doesn’t change the runtime behavior of your code, so 
+                    it’s important to only use <b>!</b> when you know that the value <i>can’t</i> be <b>null</b> or <b>undefined</b>.
+                </p>
+
+                <h2>Enums</h2>
+                <p>
+                    Enums are a feature added to JavaScript by TypeScript which allows for describing a value which could be 
+                    one of a set of possible named constants. Unlike most TypeScript features, this is not a type-level addition to 
+                    JavaScript but something added to the language and runtime. Because of this, it’s a feature which you should know 
+                    exists, but maybe hold off on using unless you are sure. You can read more about enums in the Enum reference page.
+                </p>
+
+                <h2>Less Common Primitives</h2>
+                <p>
+                    It’s worth mentioning the rest of the primitives in JavaScript which are represented in the type system. 
+                    Though we will not go into depth here.
+                </p>
+                <h4>bigint</h4>
+                <p>
+                    From ES2020 onwards, there is a primitive in JavaScript used 
+                    for very large integers, <b>BigInt</b>:
+                </p>
+                <img src="../../../img/everyday/e40.png" alt="code-40">
+                <h4>symbol</h4>
+                <p>
+                    There is a primitive in JavaScript used to create a globally 
+                    unique reference via the function <b>Symbol()</b>:
+                </p>
+                <img src="../../../img/everyday/e41.png" alt="code-41">
             </div>
         </div>
     </div>
