@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <form action="showname.php" method="post">
+            <div class="name-container">
+                <label for="name">Name : </label> <br>
+                <input type="text" name="name" id="name" value="">
+            </div>
+            <div class="address-container">
+                <label for="address">Address : </label> <br>
+                <textarea name="address" id="address" cols="30" rows="10" value=""></textarea>
+            </div>
+            <div class="age-container">
+                <label for="age">Age : </label>
+                <input type="text" name="age" id="age" value="">
+            </div>
+            <div class="profession-container">
+                <label for="profession">Profession : </label> <br>
+                <input type="text" name="profession" id="profession" value="">
+            </div>
+            <div class="status">
+                <label for="residential">Residential status : </label>
+                <div class="select">
+                    <span>
+                        <input type="radio" name="choice" id="resident" value="resident">
+                        <label for="choice">Resident</label>
+                    </span>
+                    <span>
+                        <input type="radio" name="choice" id="non-resident" value="non-resident">
+                        <label for="choice">Non-Resident</label>
+                    </span>
+                </div>
+            </div>
+            
+            <input type="submit" value="submit" id="submit" name="submit">
+        </form>
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+
+</html>
