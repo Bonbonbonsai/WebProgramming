@@ -5,48 +5,88 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Residential Form</title>
+    <style>
+        .main-container {
+            margin-left: 20px;
+        }
+
+        .error-message {
+            color: black;
+        }
+        .error {
+            color: red;
+        }
+        .round-border {
+            border: 1px solid grey;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
 <body>
     <div class="main-container">
-        <form action="showname.php" method="post">
+        <h1>Residential Form</h1>
+        <form action="showname.php" method="post" id="myForm">
             <div class="name-container">
                 <label for="name">Name : </label> <br>
-                <input type="text" name="name" id="name" value="">
+                <input type="text" name="name" id="name" class="error-message round-border" required>
+                <span class="error" id="name-error"></span>
             </div>
             <div class="address-container">
                 <label for="address">Address : </label> <br>
-                <textarea name="address" id="address" cols="30" rows="10" value=""></textarea>
+                <textarea name="address" id="address" cols="30" rows="10" class="error-message round-border" required></textarea>
+                <span class="error" id="address-error"></span>
             </div>
             <div class="age-container">
                 <label for="age">Age : </label>
-                <input type="text" name="age" id="age" value="">
+                <input type="text" name="age" id="age" class="error-message round-border" required>
+                <span class="error" id="age-error"></span>
             </div>
             <div class="profession-container">
                 <label for="profession">Profession : </label> <br>
-                <input type="text" name="profession" id="profession" value="">
+                <input type="text" name="profession" id="profession" class="error-message round-border" required>
+                <span class="error" id="profession-error"></span>
             </div>
             <div class="status">
                 <label for="residential">Residential status : </label>
                 <div class="select">
                     <span>
-                        <input type="radio" name="choice" id="resident" value="resident">
-                        <label for="choice">Resident</label>
+                        <input type="radio" name="residential_status" id="resident" value="resident" required>
+                        <label for="resident">Resident</label>
                     </span>
                     <span>
-                        <input type="radio" name="choice" id="non-resident" value="non-resident">
-                        <label for="choice">Non-Resident</label>
+                        <input type="radio" name="residential_status" id="non-resident" value="non-resident" required>
+                        <label for="non-resident">Non-Resident</label>
                     </span>
                 </div>
             </div>
-            
-            <input type="submit" value="submit" id="submit" name="submit">
+            <input type="submit" value="Submit" id="submit" name="submit">
         </form>
     </div>
 
     <script>
-        
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            const inputs = document.querySelectorAll('.error-message');
+            let isError = false;
+
+            inputs.forEach(input => {
+                const errorMessage = document.getElementById(input.id + '-error');
+                if (input.value.length < 5) {
+                    errorMessage.style.display = 'inline-block';
+                    input.classList.add('error');
+                    isError = true;
+                } else {
+                    errorMessage.innerText = '';
+                    errorMessage.style.display = 'none';
+                    input.classList.remove('error');
+                }
+            });
+
+            if (isError) {
+                event.preventDefault();
+            }
+        });
     </script>
 </body>
 
