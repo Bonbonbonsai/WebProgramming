@@ -21,13 +21,13 @@
 <body>
     <form id="CourseForm" action="index.php" method="post">
         <p><label for='CourseID'>Course ID:</label>
-            <input type="text" id="CourseID" name="CourseID" size="7" />
+            <input type="text" id="CourseID" name="CourseID" value="" size="7" />
         </p>
         <p><label for='CourseTitle'>Title:</label>
-            <input type="text" id="CourseTitle" name="CourseTitle" size="25" />
+            <input type="text" id="CourseTitle" name="CourseTitle" value="" size="25" />
         </p>
         <p><label for='DeptName'>Department Name:</label>
-            <input type="text" id="DeptName" name="DeptName" />
+            <input type="text" id="DeptName" name="DeptName" value="" />
         </p>
         <p><label for='Credits'>Credits:</label>
             <input type="text" id="Credits" name="Credits" value="" size="3" />
@@ -45,9 +45,9 @@
         </tr>
         <?php
         $servername = "localhost";
-        $username = "root"; //ตามที่กำหนดให้
-        $password = ""; //ตามที่กำหนดให้
-        $dbname = "test";    //ตามที่กำหนดให้
+        $username = "S047V";
+        $password = "EJ68268";
+        $dbname = "S047V";
         // Create connection
         $conn = mysqli_connect($servername, $username, $password, $dbname);
         // Check connection
@@ -62,8 +62,8 @@
         if (mysqli_num_rows($result) > 0) {
             // output data of each row
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<tr><td>" . "<a href='#'>" .$row["course_id"] . "</a>" . "</td><td>" . $row["title"] .
-                    "</td><td>" . $row["dept_name"] . "</td><td>" . $row["credits"] . "</td></tr>";
+                echo "<tr><td><a href='#' onclick='putInTextbox(\"" . $row["course_id"] . "\", \"" . $row["title"] . "\", \"" . $row["dept_name"] . "\", \"" . $row["credits"] . "\")'>"
+                    . $row["course_id"] . "</a></td><td>" . $row["title"] . "</td><td>" . $row["dept_name"] . "</td><td>" . $row["credits"] . "</td></tr>";
             }
         }
         // close connection
@@ -71,11 +71,20 @@
         ?>
     </table>
 
+    <script>
+        function putInTextbox(courseID, title, deptName, credits) {
+            document.getElementById('CourseID').value = courseID;
+            document.getElementById('CourseTitle').value = title;
+            document.getElementById('DeptName').value = deptName;
+            document.getElementById('Credits').value = credits;
+        }
+    </script>
+
     <?php
     $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "test";
+    $username = "S047V";
+    $password = "EJ68268";
+    $dbname = "S047V";
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $dbname);
     // Check connection
