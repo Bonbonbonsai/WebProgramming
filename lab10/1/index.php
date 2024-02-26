@@ -88,7 +88,7 @@
             $db->close();
             ?>
         </table>
-        <input type="submit" class="btn btn-primary" name="delete" value="Delete last row">
+        <input type="submit" class="btn btn-warning" name="delete" value="Delete last row">
     </form>
 
     <?php
