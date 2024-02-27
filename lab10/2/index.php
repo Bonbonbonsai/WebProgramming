@@ -1,13 +1,3 @@
-<?php
-class MyDB extends SQLite3
-{
-    function __construct()
-    {
-        $this->open('questions.db');
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,51 +14,90 @@ class MyDB extends SQLite3
             background-color: #535C91;
             color: white;
         }
+
+        body {
+            margin: 20px;
+        }
     </style>
 </head>
 
 <body>
-<form action="" method="post">
+    <form action="" method="post">
         <?php
-        $db = new MyDB();
+        class MyDB extends SQLite3
+        {
+            function __construct()
+            {
+                $this->open('questions.db');
+            }
+        }
 
-        if (isset($_POST['back'])) {
-            $currentQuestionId = isset($_POST['current_question_id']) ? $_POST['current_question_id'] : 1;
+        if (isset($_POST['submit'])) {
+            $count = isset($_POST['count']) ? $_POST['count'] : 1;
+            $selected_option = isset($_POST[$row['QID']]) ? $_POST[$row['QID']] : '';
+        
+            // Connect to database
+            $db = new MyDB();
+
+            if ($selected_option == $row['Correct']) {
+                $score++;
+            }
+
+            $count++;
+
+            // Retrieve question from database
             $sql = "SELECT *
                     FROM questions
-                    WHERE QID = ($currentQuestionId-1);";
+                    WHERE QID = $count";
             $result = $db->query($sql);
-        } else if (isset($_POST['next'])) {
-            $currentQuestionId = isset($_POST['current_question_id']) ? $_POST['current_question_id'] : 1;
-            $sql = "SELECT *
-                    FROM questions
-                    WHERE QID = ($currentQuestionId+1);";
-            $result = $db->query($sql);
+            $row = $result->fetchArray(SQLITE3_ASSOC);
+
+            // Display next question or show score if all questions are done
+            if ($count <= 10) {
+                echo "<h5>" . $row['QID'] . ") " . $row['Stem'] . "</h5>";
+                echo "<input type='hidden' name='count' value='$count'>";
+                echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_A'] . "' value='A'>";
+                echo "<label for='" . $row['QID'] . "-" . $row['Alt_A'] . "'> " . $row['Alt_A'] . "</label>" . "<br>";
+                echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_B'] . "' value='B'>";
+                echo "<label for='" . $row['QID'] . "-" . $row['Alt_B'] . "'> " . $row['Alt_B'] . "</label>" . "<br>";
+                echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_C'] . "' value='C'>";
+                echo "<label for='" . $row['QID'] . "-" . $row['Alt_C'] . "'> " . $row['Alt_C'] . "</label>" . "<br>";
+                echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_D'] . "' value='D'>";
+                echo "<label for='" . $row['QID'] . "-" . $row['Alt_D'] . "'> " . $row['Alt_D'] . "</label>" . "<br>";
+                echo "<br><input type='submit' class='btn btn-primary' name='submit' value='Submit'>";
+            } else {
+                echo "<h2>Your Score: $score</h2>";
+                $count = 1;
+                $score = 0;
+            }
+        
+            $db->close();
         } else {
+            // Display the first question
+            $count = 1;
+            $score = 0;
+            $db = new MyDB();
+
             $sql = "SELECT *
                     FROM questions
-                    WHERE QID = 1;";
+                    WHERE QID = $count";
             $result = $db->query($sql);
-        }
-
-        while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $row = $result->fetchArray(SQLITE3_ASSOC);
+        
             echo "<h5>" . $row['QID'] . ") " . $row['Stem'] . "</h5>";
-            echo "<input type='radio' name='q" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_A'] . "' value='A'>";
+            echo "<input type='hidden' name='count' value='$count'>";
+            echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_A'] . "' value='A'>";
             echo "<label for='" . $row['QID'] . "-" . $row['Alt_A'] . "'> " . $row['Alt_A'] . "</label>" . "<br>";
-            echo "<input type='radio' name='q" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_B'] . "' value='B'>";
+            echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_B'] . "' value='B'>";
             echo "<label for='" . $row['QID'] . "-" . $row['Alt_B'] . "'> " . $row['Alt_B'] . "</label>" . "<br>";
-            echo "<input type='radio' name='q" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_C'] . "' value='C'>";
+            echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_C'] . "' value='C'>";
             echo "<label for='" . $row['QID'] . "-" . $row['Alt_C'] . "'> " . $row['Alt_C'] . "</label>" . "<br>";
-            echo "<input type='radio' name='q" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_D'] . "' value='D'>";
+            echo "<input type='radio' name='" . $row['QID'] . "' id='" .  $row['QID'] . "-" . $row['Alt_D'] . "' value='D'>";
             echo "<label for='" . $row['QID'] . "-" . $row['Alt_D'] . "'> " . $row['Alt_D'] . "</label>" . "<br>";
-            echo "<input type='hidden' name='current_question_id' value='" . $row['QID'] . "'>";
+            echo "<br><input type='submit' class='btn btn-primary' name='submit' value='Submit'>";
         }
-
-        $db->close();
+        
         ?>
-
-        <input type="submit" class="btn btn-warning" name="back" value="<< Back">
-        <input type="submit" class="btn btn-warning" name="next" value="Next >>">
     </form>
 </body>
 
