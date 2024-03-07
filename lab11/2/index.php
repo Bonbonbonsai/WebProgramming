@@ -6,12 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>1</title>
+    <title>2</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
         * {
             font-family: "Rubik", sans-serif;
         }
+
         body {
             background-color: silver;
             display: grid;
@@ -73,8 +75,6 @@
     </form>
 
     <?php
-    session_start();
-
     if (isset($_POST['save'])) {
         $c_employeeID = $_POST['EmployeeID'];
         $c_fname = $_POST['Fname'];
@@ -83,19 +83,33 @@
         $c_phone = $_POST['Phone'];
         $c_email = $_POST['Email'];
 
-        $_SESSION["EmployeeID"] = $c_employeeID;
-        $_SESSION["FirstName"] = $c_fname;
-        $_SESSION["LastName"] = $c_lname;
-        $_SESSION["Address"] = $c_address;
-        $_SESSION["Phone"] = $c_phone;
-        $_SESSION["Email"] = $c_email;
+        // setcookie($cookie_name, $cookie_value, time() + (86400), "/");
+        // 86400 = 1 day
+        setcookie('EmployeeID', $c_employeeID, time() + (86400 * 30), "/");
+        setcookie('Fname', $c_fname, time() + (86400), "/");
+        setcookie('Lname', $c_lname, time() + (86400), "/");
+        setcookie('Address', $c_address, time() + (86400), "/");
+        setcookie('Phone', $c_phone, time() + (86400), "/");
+        setcookie('Email', $c_email, time() + (86400), "/");
 
         echo "The data has been successfully saved.";
     }
 
     if (isset($_POST['clear'])) {
-        session_unset();
-        session_destroy();
+        unset($_COOKIE['EmployeeID']);
+        unset($_COOKIE['Fname']);
+        unset($_COOKIE['Lname']);
+        unset($_COOKIE['Address']);
+        unset($_COOKIE['Phone']);
+        unset($_COOKIE['Email']);
+
+        setcookie('EmployeeID', '', time() - (86400 * 30), "/");
+        setcookie('Fname', '', time() - (86400), "/");
+        setcookie('Lname', '', time() - (86400), "/");
+        setcookie('Address', '', time() - (86400), "/");
+        setcookie('Phone', '', time() - (86400), "/");
+        setcookie('Email', '', time() - (86400), "/");
+
         echo "The data has been cleared.";
     }
     ?>
@@ -143,9 +157,9 @@
 
         function showData() {
             <?php
-            // if $_SESSION["EmployeeID" have data from saved
-            if (isset($_SESSION["EmployeeID"])) {
-                echo "putInTextbox('" . $_SESSION["EmployeeID"] . "', '" . $_SESSION["FirstName"] . "', '" . $_SESSION["LastName"] . "', '" . $_SESSION["Address"] . "', '" . $_SESSION["Email"] . "', '" . $_SESSION["Phone"] . "');";
+            // if $_COOKIE["EmployeeID" have data from saved
+            if (isset($_COOKIE["EmployeeID"])) {
+                echo "putInTextbox('" . $_COOKIE["EmployeeID"] . "', '" . $_COOKIE["Fname"] . "', '" . $_COOKIE["Lname"] . "', '" . $_COOKIE["Address"] . "', '" . $_COOKIE["Email"] . "', '" . $_COOKIE["Phone"] . "');";
             }
             ?>
         }
