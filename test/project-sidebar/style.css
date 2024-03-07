@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+/* nav_bar&base */
+body,
+.container {
+    font-family: "Bai Jamjuree", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+.nav-bar {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #C97926;
+    width: 100vw;
+    height: 50px;
+    padding: 10px;
+}
+.logo {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.logo>span {
+    padding-left: 20px;
+}
+
+.logo>span {
+    padding-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+/* copy me */
+.all-align-center {
+    align-items: center;
+}
+
+.flex-card-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.flex-button > .btn {
+    background-color: rgb(255, 191, 0);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.total-price {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.check-out {
+    display: flex;
+}
+
+.check-out > .btn-danger {
+    width: 50%;
+    height: 100px;
+    border: none;
+    font-size: 20px;
+}
+
+.check-out > .btn-success {
+    width: 50%;
+    height: 100px;
+    background-color: rgb(0, 183, 0);
+    border: none;
+    font-size: 20px;
+}
+
+.check-out > .btn-success:hover {
+    background-color: rgb(0, 95, 0);
+}
