@@ -93,6 +93,7 @@
         setcookie('Email', $c_email, time() + (86400), "/");
 
         echo "The data has been successfully saved.";
+        header('Refresh: 0; URL = index.php');
     }
 
     if (isset($_POST['clear'])) {
